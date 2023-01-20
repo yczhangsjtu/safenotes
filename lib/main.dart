@@ -24,10 +24,10 @@ import 'package:safenotes/views/settings/backup_setting.dart';
 
 Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await SystemChrome.setPreferredOrientations([
-    DeviceOrientation.portraitUp,
-    DeviceOrientation.portraitDown,
-  ]);
+  // await SystemChrome.setPreferredOrientations([
+  //   DeviceOrientation.portraitUp,
+  //   DeviceOrientation.portraitDown,
+  // ]);
 
   Workmanager().initialize(
     callbackDispatcher,
@@ -64,7 +64,7 @@ class SafeNotesApp extends StatelessWidget {
   Widget build(BuildContext context) {
     final sessionConfig = SessionConfig(
       invalidateSessionForAppLostFocus: Duration(seconds: foucsTimeout),
-      invalidateSessionForUserInactiviity: Duration(seconds: inactivityTimeout),
+      invalidateSessionForUserInactivity: Duration(seconds: inactivityTimeout),
     );
 
     sessionConfig.stream.listen(sessionHandler);

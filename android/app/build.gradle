@@ -42,26 +42,27 @@ android {
     defaultConfig {
         
         applicationId "com.trisven.safenotes"
-        minSdkVersion 25
+        minSdkVersion 29
         targetSdkVersion 31
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
     }
 
-   signingConfigs {
-       release {
-           keyAlias keystoreProperties['keyAlias']
-           keyPassword keystoreProperties['keyPassword']
-           storeFile keystoreProperties['storeFile'] ? file(keystoreProperties['storeFile']) : null
-           storePassword keystoreProperties['storePassword']
+//    signingConfigs {
+//        release {
+//             signingConfig signingConfigs.debug
+        //    keyAlias keystoreProperties['keyAlias']
+        //    keyPassword keystoreProperties['keyPassword']
+        //    storeFile keystoreProperties['storeFile'] ? file(keystoreProperties['storeFile']) : null
+        //    storePassword keystoreProperties['storePassword']
         //    enable for signing apk build
-           v1SigningEnabled true
-           v2SigningEnabled true
-       }
-   }
+        //    v1SigningEnabled true
+        //    v2SigningEnabled true
+//        }
+//    }
    buildTypes {
        release {
-           signingConfig signingConfigs.release
+           signingConfig signingConfigs.debug
        }
    }
 
